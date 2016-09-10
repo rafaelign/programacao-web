@@ -50,18 +50,22 @@ public class DivisoresREST {
         if (numero > 0) {
             
             listaDivisores.add(1);
-
-            for (int n = min;n < max;n++) {
-                if ( (numero % n) == 0 ) {
-                    listaDivisores.add(n);
-                    if (n != (numero / n)) {
-                        listaDivisores.add( (numero / n) );
-                    }
-                    max = numero / n;
-                }
-            }
             
-            listaDivisores.add(numero);
+            if (numero > 1) {
+
+                for (int n = min;n < max;n++) {
+                    if ( (numero % n) == 0 ) {
+                        listaDivisores.add(n);
+                        if (n != (numero / n)) {
+                            listaDivisores.add( (numero / n) );
+                        }
+                        max = numero / n;
+                    }
+                }
+
+                listaDivisores.add(numero);
+
+            }
             
         }
         
